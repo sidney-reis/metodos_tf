@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+
+\pdfinfo{
+/Title (Cálculos iterativos utilizando a constante Proporção Áurea)
+/Author (Sidney Luiz Freitas Reis)}
+\title{Cálculos iterativos utilizando a constante Proporção Áurea}
+\author{Sidney Luiz Freitas Reis}
+
+\begin{document}
+\maketitle
+
+\section{Introdução}
+Neste relatório faremos uma análise 
+
+\section{Proporção Áurea}
+
+Proporção Áurea (ou Número de Ouro) é a constante diretamente ligada na natureza do crescimento e pode ser vista em diversas situações na natureza, como colmeias, no homem, plantas e diversos outros casos que envolvem ordem de crescimento natural. Por este motivo, é utilizada fortemente na arte e no design como referência de equilibrio.
+
+Matemáticamente, a constante é um número irracional, e seus primeiros 58 dígitos são:
+
+\bigskip
+
+\textit{1.618033988749894848204586834365638117720309179805762862135...}
+
+\bigskip
+
+Este número pode ser calculado de diversas formas, mas dado o contexto de ciência computacional iremos dar mais foco a formas iterativas de calculá-lo.
+
+\subsection{Fração contínua}
+
+Denotada por: [1;$\bar{1}$].
+
+\bigskip
+
+A figura \ref{fig:fracoes} ilustra a constante em forma de frações contínuas.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=11cm]{fracoes.png}
+  \caption{Número de Ouro em forma de frações contínuas\label{fig:fracoes}}
+\end{figure}
+
+\subsection{Série de raízes}
+
+Outra forma iterativa de calcular o número de ouro é através de série de raízes, conforme ilustrado na figura \ref{fig:raizes}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=4cm]{raizes.png}
+  \caption{Número de Ouro em forma de série de raízes\label{fig:raizes}}
+\end{figure}
+
+\end{document}
