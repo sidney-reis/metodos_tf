@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
-
+\usepackage{minted}
 
 \pdfinfo{
 /Title (Cálculos iterativos utilizando a constante Proporção Áurea)
@@ -13,13 +13,18 @@
 \maketitle
 
 \section{Introdução}
-Neste relatório faremos uma análise 
+Na área da computação ciêntifica utilizando métodos númericos é necessário o uso de números irracionais que não podem ser representados computacionalmente por possuírem infinitos dígitos. Por este motivo, formas iterativas podem ser utilizadas para calcular estes números, visto que a exatidão necessária pro usuário pode ser alcansada conforme a quantidade de iterações realizadas. Dado este contexto, cálculos iterativos que produzem menos iterações tendem a ser melhores computacionalmente em termos de custo e tempo.
+
+Uma forma que pode ser utilizada para obter números irracionais iterativamente é a de frações contínuas. Uma de suas propriedades é a de aproximar o valor intercalando entre resultados maiores e menores, diferente de outras formas de cálculos iterativos. A forma de raízes aninhadas é um exemplo de cálculo iterativo que aproxima o valor sem intercalar entre resultados maiores e menores.
+
+Visto essas duas formas de calcular valores irracionais iremos neste trabalho analisar a Proporção Áurea, que é o número irracional que possui a convergência mais lenta através de aproximação racional, e ter como hipótese que a aproximação por frações contínuas é mais lenta que a de raízes aninhadas, visto as propriedades mencionadas das duas formas.
+
 
 \section{Proporção Áurea}
 
 Proporção Áurea (ou Número de Ouro) é a constante diretamente ligada na natureza do crescimento e pode ser vista em diversas situações na natureza, como colmeias, no homem, plantas e diversos outros casos que envolvem ordem de crescimento natural. Por este motivo, é utilizada fortemente na arte e no design como referência de equilibrio.
 
-Matemáticamente, a constante é um número irracional, e seus primeiros 58 dígitos são:
+A constante é um número irracional, e seus primeiros 58 dígitos são:
 
 \bigskip
 
@@ -27,7 +32,8 @@ Matemáticamente, a constante é um número irracional, e seus primeiros 58 dígitos
 
 \bigskip
 
-Este número pode ser calculado de diversas formas, mas dado o contexto de ciência computacional iremos dar mais foco a formas iterativas de calculá-lo.
+
+Este número pode ser calculado de diversas formas, e as duas que iremos analisar são a de frações contínuas e raízes aninhadas.
 
 \subsection{Fração contínua}
 
@@ -43,14 +49,25 @@ A figura \ref{fig:fracoes} ilustra a constante em forma de frações contínuas.
   \caption{Número de Ouro em forma de frações contínuas\label{fig:fracoes}}
 \end{figure}
 
+Uma das características da Proporção Áurea é o fato de ser o número real com a aproximação racional mais lenta possível, já que sua fração contínua possui o menor termo possível (1), fazendo com que suas iterações de aproximação sejam lentas.
+
 \subsection{Série de raízes}
 
-Outra forma iterativa de calcular o número de ouro é através de série de raízes, conforme ilustrado na figura \ref{fig:raizes}
+Outra forma iterativa de calcular o número de ouro é através de série de raízes, conforme ilustrado na figura \ref{fig:raizes}. Nesta figura é possível ver que série de raízes também possui o número 1 como termo.
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=4cm]{raizes.png}
   \caption{Número de Ouro em forma de série de raízes\label{fig:raizes}}
 \end{figure}
+
+\section{Análise}
+
+Para realizar a análise do comportamento das duas formas de aproximação foi utilizado a linguagem de programação Python. A escolha foi feita pelo motivo da linguagem possuir uma sintaxe mais enxuta e por nativamente possuir formas de realizar os cálculos que precisamos. A linguagem não é verbosa e seus códigos finais se assemelham com pseudo-código, fazendo com que não seja necessário se preocupar tanto com a programação do método iterativo e mais com a análise dos resultados obtidos.
+
+\begin{minted}{python}
+while (True):
+	a = 1
+\end{minted}
 
 \end{document}
