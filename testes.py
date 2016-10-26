@@ -1,28 +1,46 @@
-import decimal
+from decimal import *
 import math
 
-proporcaoAurea = decimal.Decimal((1 + 5 ** 0.5) / 2)
-valorAproximado = decimal.Decimal(1.0)
+# configura precisao para 100
+getcontext().prec = 100
+
+# define valor de comparacao
+proporcaoAurea = \
+    (Decimal(1) + Decimal(5) ** Decimal(0.5)) / Decimal(2)
+
+# valor aproximado inicial
+valorAproximado = Decimal(1.0)
+
 iteracao = 1
 
-while (abs((decimal.Decimal(valorAproximado) - \
-    decimal.Decimal(proporcaoAurea))) \
-    > 0.00000000000000009) and (iteracao <= 1000000):
+print 'iteracao 1: 1'
 
-    valorAproximado = math.sqrt(1+valorAproximado)
-    iteracao = iteracao+1
+# compara se os 21 primeiros caracteres sao
+# iguais (o "." tambem conta) e se iteracao
+# nao atingiu 1.000.000
+while str(Decimal(valorAproximado))[0:21] != \
+    str(Decimal(proporcaoAurea))[0:21] and \
+    iteracao <= 1000000:
+
+# realiza calculo da iteracao
+    valorAproximado = \
+        (Decimal(1)+Decimal(valorAproximado)).sqrt()
+
+    iteracao = iteracao + 1
+
+    print 'iteracao ' + str(iteracao) + ': ' \
+        + str(Decimal(valorAproximado))
 
 print 'iteracoes necessarias: '+ str(iteracao)
 
+#1.618033988749894848204586834365638117720309179805762862135448622705260462818902449707207204189391137484754088075386891752126633862
 
 
-
-
-# g1 = decimal.Decimal(1.0)
+# g1 = Decimal(1.0)
 # iteracao1 = 1
 
-# while (abs((decimal.Decimal(g1) - decimal.Decimal(proporcaoAurea))) > 0.00000000000000000009) and iteracao1 <= 1000000:
-#     g1 = decimal.Decimal(decimal.Decimal(1.0) + decimal.Decimal(1.0)/decimal.Decimal(g1))
+# while (abs((Decimal(g1) - Decimal(proporcaoAurea))) > 0.00000000000000000009) and iteracao1 <= 1000000:
+#     g1 = Decimal(Decimal(1.0) + Decimal(1.0)/Decimal(g1))
 #     iteracao1 = iteracao1+1
 
 # print 'fracoes: ' + str(iteracao1)
