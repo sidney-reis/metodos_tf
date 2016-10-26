@@ -24,7 +24,8 @@ while str(Decimal(valorAproximado))[0:21] != \
 
 # realiza calculo da iteracao
     valorAproximado = \
-        (Decimal(1)+Decimal(valorAproximado)).sqrt()
+        Decimal(Decimal(1.0) \
+            + Decimal(1.0) / Decimal(valorAproximado))
 
     iteracao = iteracao + 1
 
